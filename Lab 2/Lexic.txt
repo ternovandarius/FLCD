@@ -1,0 +1,34 @@
+Alphabet:
+a. Upper (A-Z) and lower case (a-z) of the English alphabet
+b. Digits (0-9)
+c. Underline character (_)
+
+Special symbols, representing:
+a. Operators: + - * / < <= >= > == != =
+b. Separators: [ ] ( ) ; space
+c. Reserved words: func int do if then endif return endfunc char char_arr int_arr for in endfor while endwhile else bool
+
+Identifiers
+-sequence of letters, digits and underscore characters, with the mention that the first character must be a letter
+
+identifier = letter {letter | digit | "_"}
+letter ::= ("A"|"B"|...|"Z"|"a"|...|"z"){"A"|"B"|...|"Z"|"a"|...|"z"}
+digit ::= ("0"|"1"|...|"9")
+
+Constants:
+a.Integer:
+
+	integer ::= "0" | [sign]("1" | "2" | ... | "9"){"0"| "1" | ... | "9"}
+	sign ::= "+" | "-"
+
+b.Character:
+
+	character ::= letter | digit | "_"
+
+c.Char_arr:
+
+	char_arr ::= {character}
+
+d.Int_arr:
+
+	int_arr ::= {integer}

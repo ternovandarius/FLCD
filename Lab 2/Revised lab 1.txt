@@ -1,0 +1,78 @@
+﻿Name: Ternovan Darius-Daniel
+Github linked to scs email address: https://github.com/ternovandarius
+
+
+P1 Compute the maximum of 3 numbers
+
+
+func computeMin(int nr1, int nr2, int nr3) do
+        int min = nr1;
+        if (nr2 < min) then
+                min = nr2;
+        endif
+        if (nr3 < min) then
+                min = nr3;
+        endif
+        return min;
+endfunc
+
+
+
+
+
+
+P2 Compute gcd of 2 numbers
+
+
+func computeGDC(int nr1, int nr2) do
+        if (nr1 == 0) then
+                return nr2;
+        endif
+        if (nr2 == 0) then
+                return nr1;
+        endif
+        if (nr1 == nr2) then
+                return nr1;
+        endif
+        if (nr1 > nr2) then
+                return computeGDC(nr1-nr2, nr2);
+        endif
+        return computeGDC(nr1, nr2-nr1);
+Endfunc
+
+
+
+
+
+
+
+
+
+
+P3 Compute the sum of n numbers
+
+
+func computeSum(int_arr array, int length) do
+        int sum = 0;
+        for (index in (0, length)) do
+                sum = sum + array[index];
+        endfor
+        return sum;
+endfunc
+
+
+
+
+P1ERR
+
+
+func computeMin(int nr1, int nr2, int nr3) do
+        int min = 1number; (1number begins with a digit, which is not allowed)
+        if (nr2 < min) then
+                min = nr2;
+        endif$ (contains an invalid character, $)
+        if (nr3 < min) then
+                min = nr3;
+        endif
+        return min;
+endfunc

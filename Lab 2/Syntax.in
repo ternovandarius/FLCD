@@ -1,0 +1,16 @@
+program ::= func [{func}]
+func ::= "func" identifier "(" [type identifier [{, type identifier}]] ")" "do" [{(stmt, ifstmt, forstmt, whilestmt)}] "endfunc"
+declstmt ::= type identifier ["=" expression] ";"
+type ::= "bool" | "int" | "char" | "int_arr[" integer "]" | "char_arr[" integer "]"
+stmt ::= (assignstmt | iostmt | declstmt | returnstmt) ";" [stmt]
+assignstmt ::= identifier "=" expression ";"
+expression ::= [expression "+"] term
+term ::= term "*" factor | factor
+factor ::= "(" expression ")" | identifier | integer | identifier "[" (integer | identifier) "]"
+iostmt ::= ("read" | "write") "(" identifier ")"
+ifstmt ::= "if" "(" condition ")" "then" [stmt] ["else" "(" condition ")" "then"] [stmt] "endif"
+forstmt ::= "for" "(" identifier "in" "(" (identifier | integer) "," (identifier | integer) ")" ")" "do" [stmt] "endfor"
+whilestmt ::= "while" "(" condition ")" "do" [stmt] "endwhile"
+condition ::= expression relation expression
+relation ::= "<" | "<=" | "==" | ">=" | ">"
+returnstmt ::= "return" (expression | relation | factor | identifier)
