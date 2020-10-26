@@ -1,0 +1,7 @@
+func computeSum(int_arr array, int length) do
+        int sum = 0;
+        for (index in (0, length)) do
+                sum = sum + array[index];
+        endfor
+        return sum;
+endfunc

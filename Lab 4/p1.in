@@ -1,0 +1,10 @@
+func computeMin(int nr1, int nr2, int nr3) do
+        int min = nr1;
+        if (nr2 < min) then
+                min = nr2;
+        endif
+        if (nr3 < min) then
+                min = nr3;
+        endif
+        return min;
+endfunc

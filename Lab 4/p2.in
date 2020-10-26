@@ -1,0 +1,15 @@
+func computeGDC(int nr1, int nr2) do
+        if (nr1 == 0) then
+                return nr2;
+        endif
+        if (nr2 == 0) then
+                return nr1;
+        endif
+        if (nr1 == nr2) then
+                return nr1;
+        endif
+        if (nr1 > nr2) then
+                return computeGDC(nr1-nr2, nr2);
+        endif
+        return computeGDC(nr1, nr2-nr1);
+Endfunc
