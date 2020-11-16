@@ -46,9 +46,18 @@ class FAReader:
         result = result[:-1] +  "]"
         return result
 
+    def accept(self, seq):
+        state = self.__initial
+        for i in seq:
+            if (state, i) in self.__transitions:
+                state = self.__transitions[(state, i)][0]
+            else:
+                return False
+        return state in self.__final
+
     def menu(self):
         while True:
-            option = input("1.Display set of states.\n2.Display alphabet.\n3.Display all transitions.\n4.Display final states.\n5.Exit.\n")
+            option = input("1.Display set of states.\n2.Display alphabet.\n3.Display all transitions.\n4.Display final states.\n5.Check if accepted by FA.\n6.Exit.\n")
             if option=="1":
                 print("The set of states: " + self.print_states())
             elif option == "2":
@@ -58,6 +67,12 @@ class FAReader:
             elif option == "4":
                 print("Final states: " + self.print_final())
             elif option == "5":
+                sequence = input("Please input the sequence you want to check:\n")
+                if self.accept(sequence):
+                    print("The sequence inserted is accepted!")
+                else:
+                    print("The sequence inserted is not accepted!")
+            elif option == "6":
                 return
             else:
                 print("Invalid command!")
