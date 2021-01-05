@@ -1,0 +1,48 @@
+%{
+#include <stdio.h>
+%}
+
+%option noyywrap
+%option caseless
+
+letter [A-Za-z]
+digit [0-9]
+identifier {letter}[_a-zA-Z0-9]*
+
+%%
+
+func {printf("Reserved word: FUNCTION\n");}
+int {printf("Reserved word: INTEGER\n");}
+do {printf("Reserved word: DO\n");}
+if {printf("Reserved word: IF\n");}
+then {printf("Reserved word: THEN\n");}
+endif {printf("Reserved word: ENDIF\n");}
+return {printf("Reserved word: RETURN\n");}
+endfunc {printf("Reserved word: END FUNCTION\n");}
+for {printf("Reserved word: FOR\n");}
+endfor {printf("Reserved word: END FOR\n");}
+in {printf("Reserved word: IN\n");}
+
+
+"("  {printf("Separator: (\n");}
+")"  {printf("Separator: )\n");}
+","  {printf("Separator: ,\n");}
+";"  {printf("Separator: ;\n");}
+"[" {printf("Separator: [\n");}
+"]" {printf("Separator: ]\n");}
+
+"="  {printf("Operator: =\n");}
+"<"  {printf("Operator: <\n");}
+">"  {printf("Operator: >\n");}
+">=" {printf("Operator: >=\n");}
+"<=" {printf("Operator: <=\n");}
+"==" {printf("Operator: ==\n");}
+"!=" {printf("Operator: !=\n");}
+"+" {printf("Operator: +\n");}
+"-"  {printf("Operator: -\n");}
+"/"  {printf("Operator: /\n");}
+"*" {printf("Operator: *\n");}
+
+{identifier} {printf("IDENTIFIER\n");}
+
+%%}
